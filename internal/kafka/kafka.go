@@ -7,6 +7,11 @@ var (
 	writers map[string]*kafka.Writer
 )
 
+func init() {
+	readers = make(map[string]*kafka.Reader, 0)
+	writers = make(map[string]*kafka.Writer, 0)
+}
+
 func NewReader(topic string) *kafka.Reader {
 	var r *kafka.Reader
 	var ok bool
